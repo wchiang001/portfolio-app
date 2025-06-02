@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - Nicholas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        /* Areas of Interest Section */
+        .interests {
+            display: flex;
+            justify-content: center;
+            align-items: stretch; /* Forces equal height */
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .interest-box {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: auto; /* Allows for flexibility */
+            min-height: 250px; /* Ensures all boxes are at least this height */
+        }
+
+        /* Ensure paragraph fills space evenly */
+        .interest-box p {
+            flex-grow: 1; /* Makes sure shorter text expands */
+        }
+
+
+        .interest-box img {
+            display: block;
+            margin: auto; /* Centers the icon */
+            width: 80px; /* Adjust size if needed */
+            height: 80px;
+        }
+        /* Projects Section */
+        .project-section {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .project {
+            margin-bottom: 30px;
+        }
+        .project-card {
+            background-color: #fff;
+            border: none; /* Remove border */
+            border-radius: 8px; /* Keeps rounded corners for a clean look */
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .project-card h2 {
+            color: #333;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .project-card h3 {
+            color: #007bff;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        .project-card ul {
+            padding-left: 20px;
+        }
+
+        .project-card li {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-slide {
+            width: 100%;
+            flex: 0 0 100%; /* Ensures each image fills the container one at a time */
+            text-align: center;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        .caption {
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 10px;
+            color: #333;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons a {
+            display: inline-block;
+            padding: 12px;
+            width: 200px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: 0.3s;
+            margin: 10px;
+        }
+        .buttons a:hover {
+            background-color: #555;
+        }
+        .interests .carousel-btn {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .interests {
+                flex-direction: column; /* Stacks items vertically on small screens */
+                align-items: center; /* Centers them */
+            }
+
+            .interest-box {
+                width: 90%; /* Adjusts width for smaller screens */
+                max-width: 350px; /* Ensures readable size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        My Projects
+    </header>
+    <div class="container">
+
+        <!-- Areas of Interest -->
+        <h2>Areas of Interest</h2>
+        <div class="interests">
+            <div class="interest-box">
+                <img src="images/analyticslogo.png" alt="Data Analytics">
+                <h3>Data Analytics</h3>
+                <p>I enjoy uncovering insights that drive smarter decisions. With a foundation in finance and experience in SQL, Power BI, and Alteryx, I’ve worked on translating raw data into clear business narratives — from performance tracking dashboards to deep dives into sales behavior. To deepen my skillset, I’m currently learning Python to handle more complex data work and broaden my analytical toolkit.</p>
+            </div>
+            <div class="interest-box">
+                <img src="images/iteration.png" alt="Process Improvement">
+                <h3>Process Improvement</h3>
+                <p>I’ve often found myself as the “translator” between data teams and business leaders. Over the years, I’ve helped teams simplify reporting cycles, standardize metrics, and reduce repetitive tasks through better design and automation. Whether it’s streamlining operations or enabling self-serve analytics, I enjoy finding practical ways to improve how people work every day.</p>
+            </div>
+            <div class="interest-box">
+                <img src="images/online-learning.png" alt="Lifelong Learning">
+                <h3>Lifelong Learning</h3>
+                <p>I’m naturally curious and always looking to sharpen my skills — whether it’s picking up Python, exploring new data tools, or diving into topics like behavioral design. I enjoy learning not just for career growth, but because I genuinely find joy in discovering better ways to think and work.</p>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="project-section">
+            <h2>Projects</h2>
+
+            <!-- Analytics -->
+            <div class="project">
+                    <div class="project-card">
+                        <h2>🚀 Sales Channel Profiling & Productivity Analysis (Alteryx/PowerBI)</h2>
+
+                        <h3>📌 Purpose</h3>
+                        <p>This one-week analytics project was initiated to help senior management compare the recruitment strategies and early productivity of new sales hires across different distribution channels. The aim was to assess whether sales channels differ significantly in how they attract new talents — and how those differences impact performance outcomes.</p>
+
+                        <h3>✅ What I Did</h3>
+                        <ul>
+                            <li>Scoped and delivered the entire analysis within one week under tight management deadlines.</li>
+                            <li>Consolidated fragmented data from multiple sources: Manually maintained Excel trackers, SAP BI transaction-level sales data, agent database for demographic profiles and employment history</li>
+                            <li>Used Alteryx to join and cleanse large datasets via unique Agent IDs. Engineered new time-based metrics to track each agent’s sales by months since joining (e.g., Month 1, Month 2...).</li>
+                            <li>Created calculated fields like:
+                                <ul>
+                                    <li>Total sales per agent per month of employment</li>
+                                    <li>Average sales per case</li>
+                                    <li>Product Mix per cohort</li>
+                                </ul>
+                            </li>
+                            <li>Built a Power BI dashboard to visualize trends and compare agent profiles and productivity across channels.</li>
+                        </ul>
+
+                        <h3>🔎 Key Insights</h3>
+                        <ul>
+                            <li>One channel had significantly higher attrition rates despite hiring more experienced agents — likely due to higher performance pressure.</li>
+                            <li>Another channel showed higher productivity per agent, but the small sample size limited statistical confidence.</li>
+                            <li>Profile breakdowns by age group and previous employment helped suggest where each channel’s recruitment strategy was most effective.</li>
+                        </ul>
+
+                        <h3>🌟 Outcome</h3>
+                        <p>Although constrained by time and data completeness, the dashboard provided management with actionable hypotheses on recruitment and retention strategies. It also served as a proof of concept for future, more in-depth channel performance studies.</p>
+
+                        <h3>🛠️ Tools Used</h3>
+                        <p>Alteryx, Power BI, Excel, SAP Business Intelligence</p>
+                    </div>
+
+                    <div class="carousel">
+                    <div class="carousel-wrapper">
+                        <button class="carousel-btn prev" onclick="moveSlide(-1, 'carousel-analytics')">❮</button>
+                        
+                        <div class="carousel-container" id="carousel-analytics">
+                            <div class="carousel-slide">
+                                <img src="images/Alteryx1.jpg" alt="Alteryx Workflow Screenshot">
+                                <p class="caption"><b>Alteryx</b>: Workflow that consolidated various excel files and performing calculations on millions of rows of data within mere 15 seconds.</p>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/Manpower.png" alt="PBI Screenshot-Manpower Summary">
+                                <p class="caption"><b>PowerBI</b>: An overview of sales agents manpower numbers and their profile/background based on different sales channel. Note: Dummy data was used.</p>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/Productivity.png" alt="PBI Screenshot-Productivity">
+                                <p class="caption"><b>PowerBI</b>: An overview of productivity of each channel, normalised on a per sales agent basis; Product mix with slicer to enable quick analysis. Note: Dummy data was used.</p>
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-btn next" onclick="moveSlide(1, 'carousel-analytics')">❯</button>
+                    </div>
+            </div>
+
+            <!-- PowerBI -->
+            <div class="project">
+                    <div class="project-card">
+                        <h2>🚀 Strategic Transformation Dashboard (PowerBI)</h2>
+
+                        <h3>📌 Purpose</h3>
+                        <p>To support the company’s transformation programme, I developed a Power BI dashboard that provides stakeholders and senior management with a consolidated, real-time view of all ongoing strategic initiatives.</p>
+
+                        <h3>✅ What I Did</h3>
+                        <ul>
+                            <li>Took the initiative to move away from slow, manual Excel reports and build an interactive Power BI dashboard.</li>
+                            <li>Consolidated data from various sources including finance systems, Excel trackers, and even email submissions from initiative owners.</li>
+                            <li>Calculated high-level ROI for each initiative based on projected cost savings and revenue benefits.</li>
+                            <li>Merged actual vs. budgeted investment data with benefit realization tracking to give a holistic view of performance.</li>
+                            <li>Connected additional metadata such as initiative status (RAG), business pillars, and ownership to enhance visibility and filtering.</li>
+                            <li>Dealt with data inconsistencies and gaps by standardizing inputs and collaborating with business units to clean and validate information.</li>
+                        </ul>
+
+                        <h3>🎯 Outcome & Business Impact</h3>
+                        <ul>
+                            <li>Empowered the Transformation Office & Leadership to monitor Monitor initiatives at a glance across business pillars</li>
+                            <li>Enabled stakeholders to self-serve and validate their own initiative data.</li>
+                            <li>Supported executive decision-making on prioritization, investment, and next steps.</li>
+                        </ul>
+
+                        <h3>🛠️ Tools Used</h3>
+                        <p>Power BI, Excel, stakeholder interviews.</p>
+                    </div>
+
+                    <div class="carousel">
+                    <div class="carousel-wrapper">
+                        <button class="carousel-btn prev" onclick="moveSlide(-1, 'carousel-powerbi')">❮</button>
+                        
+                        <div class="carousel-container" id="carousel-powerbi">
+                            <div class="carousel-slide">
+                                <img src="images/BOW_InitiativeView.png" alt="PBI Screenshot-Programme">
+                                <p class="caption"><b>PowerBI</b>: An overview of the programme and initiatives, with slicers to enable users to view in different dimensions. Project details can also be viewed by selecting the project.</p>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/BOW_NumbersView.png" alt="PBI Screenshot-Numbers">
+                                <p class="caption"><b>PowerBI</b>: An overview of the investment spend and benefits across the initiatives, allow tracking of utilization and realization.</p>
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-btn next" onclick="moveSlide(1, 'carousel-powerbi')">❯</button>
+                    </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="buttons">
+            <a href="index.html">Back to main</a>
+        </div>
+    </div>
+
+    <script>
+        function moveSlide(direction, carouselId) {
+            let carousel = document.getElementById(carouselId);
+            let slides = carousel.getElementsByClassName("carousel-slide");
+            let totalSlides = slides.length;
+
+            // Track the current index
+            let currentIndex = parseInt(carousel.getAttribute("data-index")) || 0;
+
+            // Update index based on direction
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = totalSlides - 1;  // Wrap back
+            if (currentIndex >= totalSlides) currentIndex = 0;  // Wrap forward
+
+            // Apply sliding transition
+            carousel.setAttribute("data-index", currentIndex);
+            let shiftAmount = currentIndex * 100; // Move exactly one full slide width
+            carousel.style.transform = `translateX(-${shiftAmount}%)`;
+        }
+    </script>
+
+
+</body>
+</html>

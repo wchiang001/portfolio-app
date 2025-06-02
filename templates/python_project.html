@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Data Project - Nicholas' Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .project-description {
+            text-align: left;
+            margin-top: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+        }
+        .links a {
+            display: block;
+            margin: 10px auto;
+            padding: 12px;
+            width: 200px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .links a:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+        footer a {
+            color: #00c3ff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Python Data Project - Interactive Charts</h1>
+    </header>
+    <div class="container">
+        <h2>📊 Interactive Data Visualization</h2>
+        <p>This project fetches real-time data from <strong>data.gov.sg</strong> and presents it through interactive visualizations.</p>
+
+        <div class="project-description">
+            <h3>🔍 How It Works</h3>
+            <ul>
+                <li>Data is pulled dynamically from the API.</li>
+                <li>Users can interact with filters to explore trends.</li>
+                <li>Visualization adjusts based on user selections.</li>
+            </ul>
+
+            <h3>📈 Live Interactive Chart</h3>
+            <iframe src="https://your-streamlit-app.streamlit.app/?embedded=true" title="Interactive Chart"></iframe>
+        </div>
+
+        <div class="links">
+            <a href="index.html">Back to Main</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nicholas Chiang. All rights reserved.</p>
+        <p><a href="credits.html">Credits & Attribution</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        async function loadChart() {
+            const response = await fetch("insurance_data.json");
+            const data = await response.json();
+
+            const labels = data.map(item => item["Metric"]);
+            const values = data.map(item => parseFloat(item["Value"]));
+
+            new Chart(document.getElementById("insuranceChart"), {
+                type: "bar",
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "Insurance Trends",
+                        data: values,
+                        backgroundColor: "rgba(75, 192, 192, 0.5)"
+                    }]
+                }
+            });
+        }
+
+        window.onload = loadChart;
+    </script>
+    <canvas id="insuranceChart"></canvas>
+
+</body>
+</html>
