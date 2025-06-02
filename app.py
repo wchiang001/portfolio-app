@@ -11,14 +11,27 @@ def home():
                            tagline="Always a Work-In-Progress | Passion in Numbers | Relentless Learner",
                            contact_info="(+65)90188204 | wen_wei_91@hotmail.com",
                            email="wen_wei_91@hotmail.com",
-                           year=2025,
-                           links=[
-                               {"url": "aboutme.html", "text": "About Me"},
-                               {"url": "https://www.linkedin.com/in/nicholas-cww/", "text": "LinkedIn"},
-                               {"url": "mycv.html", "text": "My CV"},
-                               {"url": "myprojects.html", "text": "My Projects"},
-                               {"url": "python_project.html", "text": "Python Project (WIP)"}
-                           ])
+                           year=2025)
+
+@app.route("/aboutme")
+def aboutme():
+    return render_template("aboutme.html")
+
+@app.route("/credits")
+def credits():
+    return render_template("credits.html")
+
+@app.route("/mycv")
+def mycv():
+    return render_template("mycv.html")
+
+@app.route("/myprojects")
+def myprojects():
+    return render_template("myprojects.html")
+
+@app.route("/python_project")
+def python_project():
+    return render_template("python_project.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

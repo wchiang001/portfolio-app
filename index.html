@@ -1,0 +1,37 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ header_text }}</h1>
+    </header>
+    
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/portrait2.png') }}" alt="Nicholas' Portrait">
+        <h2>{{ name }}</h2>
+        <p>{{ tagline }}</p>
+        
+    <div class="links">
+        <a href="{{ url_for('aboutme') }}">About Me</a>
+        <a href="https://www.linkedin.com/in/nicholas-cww/">LinkedIn</a>
+        <a href="{{ url_for('mycv') }}">My CV</a>
+        <a href="{{ url_for('myprojects') }}">My Projects</a>
+        <a href="{{ url_for('python_project') }}">Python Project (WIP)</a>
+    </div>
+        
+        <p>Contact me: {{ contact_info }}</p>
+        <button class="contact-button" onclick="window.location.href='mailto:{{ email }}?subject=Inquiry from Your Portfolio&body=Hello Nicholas,'">Contact Me</button>
+    </div>
+
+    <footer>
+        <p>&copy; {{ year }} Nicholas Chiang. All rights reserved.</p>
+        <p><a href="credits.html">Credits & Attribution</a></p>
+    </footer>
+</body>
+</html>
